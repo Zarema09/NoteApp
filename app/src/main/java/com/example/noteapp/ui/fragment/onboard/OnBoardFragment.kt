@@ -1,5 +1,6 @@
-package com.example.noteapp.ui.activity.onboard
+package com.example.noteapp.ui.fragment.onboard
 
+import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -9,7 +10,8 @@ import androidx.navigation.findNavController
 import androidx.viewpager2.widget.ViewPager2
 import com.example.noteapp.R
 import com.example.noteapp.databinding.FragmentOnBoardBinding
-import com.example.noteapp.ui.activity.adapters.OnBoardViewpagerAdapter
+import com.example.noteapp.ui.fragment.adapters.OnBoardViewpagerAdapter
+import com.example.noteapp.utils.PreferenceHelper
 import com.google.android.material.tabs.TabLayoutMediator
 
 class OnBoardFragment : Fragment() {
