@@ -6,13 +6,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.noteapp.App
 import com.example.noteapp.R
 import com.example.noteapp.databinding.FragmentNoteBinding
 import com.example.noteapp.databinding.FragmentOnBoardBinding
 import com.example.noteapp.databinding.FragmentOnBoardPagingBinding
+import com.example.noteapp.ui.adapters.NoteAdapter
 
 class NoteFragment : Fragment() {
     private lateinit var binding: FragmentNoteBinding
+    private val noteAdapter = NoteAdapter()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -24,12 +28,27 @@ class NoteFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        initialize()
         setUpListener()
+        getData()
+    }
+
+
+    private fun initialize() {
+        binding.rvNote.apply {
+            layoutManager = LinearLayoutManager(requireContext())
+            adapter = noteAdapter
+        }
     }
 
     private fun setUpListener() {
         binding.btnAdd.setOnClickListener {
             findNavController().navigate(R.id.action_noteFragment_to_noteDetailFragment)
+        }
+    }
+    private fun getData() {
+        App.appDatabase?.noteDao()?.getAll()?.observe(viewLifecycleOwner){model->
+            noteAdapter.submitList(model)
         }
     }
 }
