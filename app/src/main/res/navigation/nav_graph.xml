@@ -7,17 +7,30 @@
 
     <fragment
         android:id="@+id/onBoardFragment"
-        android:name="com.example.noteapp.ui.activity.onboard.OnBoardFragment"
+        android:name="com.example.noteapp.ui.fragment.onboard.OnBoardFragment"
         android:label="fragment_on_board"
         tools:layout="@layout/fragment_on_board" />
     <fragment
         android:id="@+id/onBoardPagingFragment"
-        android:name="com.example.noteapp.ui.activity.OnBoardPagingFragment"
+        android:name="com.example.noteapp.ui.fragment.onboard.OnBoardPagingFragment"
         android:label="fragment_on_board_paging"
         tools:layout="@layout/fragment_on_board_paging" />
     <fragment
         android:id="@+id/noteFragment"
-        android:name="com.example.noteapp.ui.activity.note.NoteFragment"
+        android:name="com.example.noteapp.ui.fragment.note.NoteFragment"
         android:label="fragment_note"
-        tools:layout="@layout/fragment_note" />
+        tools:layout="@layout/fragment_note" >
+        <action
+            android:id="@+id/action_noteFragment_to_noteDetailFragment"
+            app:destination="@id/noteDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/noteDetailFragment"
+        android:name="com.example.noteapp.ui.fragment.note.NoteDetailFragment"
+        android:label="fragment_note_detail"
+        tools:layout="@layout/fragment_note_detail" >
+        <argument
+            android:name="noteId"
+            app:argType="integer" />
+    </fragment>
 </navigation>

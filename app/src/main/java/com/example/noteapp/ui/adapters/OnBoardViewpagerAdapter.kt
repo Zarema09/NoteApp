@@ -1,9 +1,9 @@
-package com.example.noteapp.ui.activity.adapters
+package com.example.noteapp.ui.adapters
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.example.noteapp.ui.activity.OnBoardPagingFragment
+import com.example.noteapp.ui.fragment.onboard.OnBoardPagingFragment
 
 class OnBoardViewpagerAdapter(fragment: Fragment) : FragmentStateAdapter(fragment) {
     override fun getItemCount(): Int = 3

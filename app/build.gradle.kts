@@ -1,7 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
-
+    id("com.google.devtools.ksp") version "2.0.0-1.0.21"  // Используем актуальную версию плагина KSP
     id("androidx.navigation.safeargs.kotlin")
 }
 
@@ -12,7 +12,7 @@ android {
     defaultConfig {
         applicationId = "com.example.noteapp"
         minSdk = 24
-        targetSdk = 34
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
@@ -51,11 +51,15 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
-    //Nav
+    // Навигация
     val nav_version = "2.8.4"
     implementation("androidx.navigation:navigation-fragment:$nav_version")
     implementation("androidx.navigation:navigation-ui:$nav_version")
 
-    //Lottie
+    // Lottie
     implementation("com.airbnb.android:lottie:3.4.0")
+
+    // Room (включая KSP для Room)
+    implementation("androidx.room:room-ktx:2.6.1")
+    ksp("androidx.room:room-compiler:2.6.1")
 }

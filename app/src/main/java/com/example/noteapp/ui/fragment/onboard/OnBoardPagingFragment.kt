@@ -1,7 +1,6 @@
-package com.example.noteapp.ui.activity
+package com.example.noteapp.ui.fragment.onboard
 
 import android.os.Bundle
-import android.renderscript.ScriptGroup.Binding
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
