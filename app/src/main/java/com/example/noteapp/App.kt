@@ -16,7 +16,7 @@ class App :Application() {
         getInstate()
     }
 
-    private fun getInstate():AppDatabase?{
+    fun getInstate():AppDatabase?{
         if (appDatabase == null){
             appDatabase = applicationContext?.let { context ->
                 Room.databaseBuilder(
