@@ -23,4 +23,8 @@ class PreferenceHelper(mainActivity: Context) {
         get() = sharedPreferences.getString("title","")
         set(value) = sharedPreferences.edit().putString("title",value)!!.apply()
 
+    var isSignUpShown : Boolean
+        get() =  sharedPreferences.getBoolean("sign",false)
+        set(value) = sharedPreferences.edit().putBoolean("sign",value).apply()
+
 }

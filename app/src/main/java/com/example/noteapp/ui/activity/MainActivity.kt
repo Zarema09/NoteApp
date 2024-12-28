@@ -1,9 +1,11 @@
 package com.example.noteapp.ui.activity
 
+import android.content.Context
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
 import com.example.noteapp.R
+import com.example.noteapp.ui.fragment.signin.SigninFragment
 import com.example.noteapp.utils.PreferenceHelper
 
 class MainActivity : AppCompatActivity() {
